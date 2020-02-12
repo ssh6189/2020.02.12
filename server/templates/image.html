@@ -1,0 +1,29 @@
+<!-- 웹디자이너의 공간 -->
+Yolo image 갤러리  <br>
+
+<form action = "/fileUpload" method = "POST"
+      enctype = "multipart/form-data">
+    <input type = "file" name = "file1"/> <br>
+    제목 : <input type = text name=title>
+    <input type = "submit" value = "전송"/>
+</form>
+
+<!-- 표만들기  -->
+<table>
+    {% for s  in  listData  %}     
+    <tr>        
+        <!-- 얘를 클릭하면, /view라는게 나옴 -->
+        <td> <a href=/view?id={{s.id}}> <img src="/static/{{s.img}}" width=100 > </a>  </td>
+        <td> {{s.title}} </td>
+        
+        <!-- <td bgcolor="rgb(89,211,147)">
+        <font color="rgb(25,133,86)">RGB색상표</font></td> -->
+        
+    </tr>    
+    {% endfor %}
+</table>
+
+<!-- 대응되는것이 없으면, title에 빈값을 넣어준다. -->
+<head> <metacharset="utf-8"><metaname="viewport" content="width=device-width, initial-scale=1.0"> </head>
+    
+<inputtype= "file" name= "file1" accept="image/*" capture="camera"/>
